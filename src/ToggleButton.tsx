@@ -5,7 +5,7 @@ export default function ToggleButton() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-gray-200"
+      className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-gray-100"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
