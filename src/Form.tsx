@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ProgressBar from "./ProgressBar";
 import FormHeader from "./FormHeader";
-import Photo from "./Photo";
+import Profile from "./Profile";
 
 export type Selected = "Profile" | "Experience" | "Education" | "Skills";
 
@@ -13,8 +13,8 @@ export default function Form() {
     <>
       <ProgressBar progress={progress}></ProgressBar>
       <FormHeader {...{ selected, setSelected }}></FormHeader>
-      <hr className="mt-2 border-gray-200" />
-      <Photo></Photo>
+      <hr className="mt-2 border-gray-100" />
+      <Profile></Profile>
     </>
   );
 }

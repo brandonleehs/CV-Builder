@@ -1,13 +1,33 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Photo() {
-  const [preview, setPreview] = useState();
-  const handleClick = () => {};
-  const uploadImage = () => {};
+  const [preview, setPreview] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const handleClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    } else {
+      throw new Error("fileInputRef is null!");
+    }
+  };
+  const uploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target && e.target.files) {
+      const file = e.target.files[0];
+      const objectUrl = URL.createObjectURL(file);
+      setPreview(objectUrl);
+    }
+  };
+  useEffect(() => () => URL.revokeObjectURL(preview), [preview]);
 
   return (
-    <section className="grid place-items-center gap-2 p-4">
-      <input type="file" accept="image/*" className="hidden" />
+    <section className="grid place-items-center gap-2">
+      <input
+        type="file"
+        accept="image/*"
+        ref={fileInputRef}
+        className="hidden"
+        onChange={uploadImage}
+      />
       <img
         src={
           preview

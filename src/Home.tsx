@@ -8,7 +8,7 @@ export default function Home() {
         <p className="text-3xl font-semibold text-orange-600">CVMaker</p>
         <ToggleButton></ToggleButton>
       </section>
-      <hr className="border-gray-200" />
+      <hr className="border-gray-100" />
       <Form></Form>
     </div>
   );
