@@ -5,13 +5,13 @@ export default function ToggleButton() {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-gray-100"
+      className="inline-flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
         height="16"
-        fill="#4B5563"
+        fill={darkMode ? "#fafafa" : "#4B5563"}
         viewBox="0 0 16 16"
         className="bi"
       >

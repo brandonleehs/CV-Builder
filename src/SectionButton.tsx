@@ -10,7 +10,7 @@ export default function SectionButton({
 }) {
   return (
     <button
-      className={`w-20 cursor-pointer bg-center px-2 pt-2 text-sm transition-all duration-300 hover:bg-gray-300 hover:bg-[radial-gradient(circle,transparent_1%,#d1d5db_1%)] hover:bg-[length:15000%] hover:bg-center active:bg-[#b7bcc5] active:bg-none active:bg-[length:100%] active:duration-250 ${selected ? "text-orange-500" : ""} `}
+      className={`w-20 cursor-pointer bg-center px-2 pt-2 text-sm transition-all duration-300 hover:bg-gray-300 hover:bg-[radial-gradient(circle,transparent_1%,#d1d5db_1%)] hover:bg-[length:15000%] hover:bg-center active:bg-[#b7bcc5] active:bg-none active:bg-[length:100%] active:duration-250 dark:hover:bg-orange-700 dark:active:bg-orange-800 ${selected ? "text-orange-500" : ""} `}
       onClick={() => setSelected(label)}
     >
       {label}

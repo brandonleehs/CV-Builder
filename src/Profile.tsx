@@ -8,10 +8,10 @@ export default function Profile() {
   const [location, setLocation] = useState("");
   const [summary, setSummary] = useState("");
   const inputStyle =
-    "rounded-md border-0 bg-gray-100 px-3 py-2 focus:outline-2 focus:outline-gray-400";
+    "rounded-md border-0 bg-gray-100 px-3 py-2 focus:outline-2 dark:bg-neutral-800 focus:outline-gray-400";
   return (
-    <div className="bg-gray-50 min-[600px]:p-6">
-      <section className="m-auto grid max-w-[600px] gap-2 rounded-md bg-white p-4 text-[0.875rem] shadow-md md:p-6 lg:max-w-[1000px] lg:grid-cols-2 lg:*:not-first:col-start-2 [&_label]:text-sm">
+    <div className="bg-gray-50 min-[600px]:p-6 dark:bg-neutral-900">
+      <section className="m-auto grid max-w-[600px] gap-2 rounded-md bg-white p-4 text-[0.875rem] shadow-md md:p-6 lg:max-w-[1000px] lg:grid-cols-2 lg:*:not-first:col-start-2 dark:bg-neutral-900 [&_label]:text-sm">
         <Photo />
         <div className="grid gap-2">
           <label
@@ -100,7 +100,7 @@ export default function Profile() {
               name="summary"
               id="summary"
               placeholder="Write a short summary about yourself..."
-              className="w-full rounded-sm bg-gray-100 p-2 outline-0 focus:outline-2 focus:outline-gray-400"
+              className="w-full rounded-sm bg-gray-100 p-2 outline-0 focus:outline-2 focus:outline-gray-400 dark:bg-neutral-800"
               rows={4}
               maxLength={500}
               onChange={(e) => setSummary(e.target.value)}

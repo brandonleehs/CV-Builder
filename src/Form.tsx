@@ -13,7 +13,7 @@ export default function Form() {
     <>
       <ProgressBar progress={progress}></ProgressBar>
       <FormHeader {...{ selected, setSelected }}></FormHeader>
-      <hr className="mt-2 border-gray-100" />
+      <hr className="mt-2 border-gray-100 dark:border-neutral-800" />
       <Profile></Profile>
     </>
   );

@@ -8,7 +8,7 @@ export default function FormHeader({
   setSelected: React.Dispatch<React.SetStateAction<Selected>>;
 }) {
   return (
-    <section className="grid w-max grid-flow-col overflow-x-auto">
+    <section className="grid w-max grid-flow-col overflow-x-auto pb-2">
       <SectionButton
         selected={selected === "Profile"}
         label="Profile"
