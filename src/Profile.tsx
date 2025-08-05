@@ -1,6 +1,11 @@
 import { useState } from "react";
 import Photo from "./Photo";
 export default function Profile() {
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+  const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
+  const [location, setLocation] = useState("");
   const [summary, setSummary] = useState("");
   const inputStyle =
     "rounded-md border-0 bg-gray-100 px-3 py-2 focus:outline-2 focus:outline-gray-400";
@@ -21,6 +26,7 @@ export default function Profile() {
             id="name"
             placeholder="Enter your full name"
             className={inputStyle}
+            onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div className="grid gap-2">
@@ -36,6 +42,7 @@ export default function Profile() {
             id="title"
             placeholder="e.g. Frontend Developer"
             className={inputStyle}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className="grid gap-2">
@@ -51,6 +58,7 @@ export default function Profile() {
             required
             placeholder="your@email.com"
             className={inputStyle}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         <div className="grid gap-2">
@@ -66,6 +74,7 @@ export default function Profile() {
             required
             placeholder="+1 (555) 000-0000"
             className={inputStyle}
+            onChange={(e) => setTel(e.target.value)}
           />
         </div>
         <div className="grid gap-2">
@@ -75,6 +84,7 @@ export default function Profile() {
             id="location"
             placeholder="City, Country"
             className={inputStyle}
+            onChange={(e) => setLocation(e.target.value)}
           />
         </div>
         <div className="grid gap-2">
