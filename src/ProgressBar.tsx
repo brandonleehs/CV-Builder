@@ -6,10 +6,8 @@ export default function ProgressBar({ progress }: { progress: number }) {
         <p className="font-bold">{progress}%</p>
       </div>
       <div
-        className="h-2 w-full rounded-sm transition-all"
-        style={{
-          backgroundImage: `linear-gradient(to right, #ea580c ${progress}%, #f3f4f6 ${progress}%)`,
-        }}
+        className="h-2 w-full rounded-sm bg-orange-600 transition-[width]"
+        style={{ width: `${progress}%` }}
       ></div>
     </section>
   );
