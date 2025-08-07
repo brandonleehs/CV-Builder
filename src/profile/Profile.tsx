@@ -1,5 +1,5 @@
 import Photo from "./Photo";
-import { type Selected } from "./Form";
+import { type Selected } from "../form/Form";
 
 interface ProfileProps {
   inputStyle: string;

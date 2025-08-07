@@ -1,5 +1,5 @@
-import ToggleButton from "./ToggleButton";
-import Form from "./Form";
+import ToggleButton from "./form/ToggleButton";
+import Form from "./form/Form";
 
 export default function Home() {
   return (

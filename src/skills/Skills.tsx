@@ -1,61 +1,52 @@
-import ExperienceField from "./ExperienceField";
-import type IExperience from "./Experience";
-import type { Selected } from "./Form";
+import SkillsField from "./SkillsField";
+import type { Selected } from "../form/Form";
 
-interface ExperienceProps {
+interface SkillsProps {
   inputStyle: string;
-  experiences: IExperience[];
-  updateExperiences: (
-    id: string,
-    field: ExperienceKey,
-    newValue: string,
-  ) => void;
-  addExperience: () => void;
-  removeExperience: (id: string) => void;
+  skills: ISkills[];
+  updateSkills: (id: string, field: SkillsKey, newValue: string) => void;
+  addSkills: () => void;
+  removeSkills: (id: string) => void;
   setSelected: (selected: Selected) => void;
 }
 
-export interface IExperience {
+export interface ISkills {
   id: string;
-  job: string;
-  company: string;
-  companyLocation: string;
-  startDate: string;
-  endDate: string;
-  jobDesc: string;
+  category: string;
+  name: string;
 }
 
-export type ExperienceKey = keyof IExperience;
+export type SkillsKey = keyof ISkills;
 
-export default function Experience({
+export default function Skill({
   inputStyle,
-  experiences,
-  updateExperiences,
-  addExperience,
-  removeExperience,
+  skills,
+  updateSkills,
+  addSkills,
+  removeSkills,
   setSelected,
-}: ExperienceProps) {
+}: SkillsProps) {
   return (
-    <section className="m-auto grid max-w-[600px] gap-4 rounded-md bg-white p-4 shadow-md md:p-6 dark:bg-neutral-900">
+    <section className="m-auto grid max-w-[800px] gap-4 rounded-md bg-white p-4 shadow-md md:p-6 dark:bg-neutral-900">
       <p className="text-2xl font-semibold text-gray-700 dark:text-gray-50">
-        Professional Experience
+        Professional Skills
       </p>
-      {experiences.map((exp, index) => (
-        <ExperienceField
+      {skills.map((skill, index) => (
+        <SkillsField
           index={index}
-          key={exp.id}
-          updateExperiences={updateExperiences}
-          id={exp.id}
+          key={skill.id}
+          updateSkills={updateSkills}
+          id={skill.id}
           inputStyle={inputStyle}
-          experience={exp}
-          removeExperience={removeExperience}
-        ></ExperienceField>
+          skill={skill}
+          removeSkills={removeSkills}
+        ></SkillsField>
       ))}
-      {experiences.length < 3 && (
+      {skills.length < 3 && (
         <button
           className="my-2 flex cursor-pointer items-center gap-1 text-orange-600"
           type="button"
-          onClick={addExperience}
+          onClick={addSkills}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +65,7 @@ export default function Experience({
         Preview CV
       </button>
       <input
-        value="Continue"
+        value="Submit"
         type="submit"
         className="-mt-2 cursor-pointer rounded-md p-2 text-orange-600 outline-1 outline-orange-600 transition hover:bg-orange-600 hover:text-white active:bg-orange-700 active:text-white"
         onClick={() => setSelected("Education")}

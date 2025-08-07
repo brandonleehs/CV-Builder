@@ -1,4 +1,4 @@
-import useDarkMode from "./useDarkMode";
+import useDarkMode from "../theme/useDarkMode";
 
 export default function ToggleButton() {
   const [darkMode, setDarkMode] = useDarkMode();

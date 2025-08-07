@@ -1,57 +1,61 @@
-import type { Selected } from "./Form";
-import EducationField from "./EducationField";
+import ExperienceField from "../experience/ExperienceField";
+import type IExperience from "../experience/Experience";
+import type { Selected } from "../form/Form";
 
-interface EducationProps {
+interface ExperienceProps {
   inputStyle: string;
-  educations: IEducation[];
-  updateEducations: (id: string, field: EducationKey, newValue: string) => void;
-  addEducation: () => void;
-  removeEducation: (id: string) => void;
+  experiences: IExperience[];
+  updateExperiences: (
+    id: string,
+    field: ExperienceKey,
+    newValue: string,
+  ) => void;
+  addExperience: () => void;
+  removeExperience: (id: string) => void;
   setSelected: (selected: Selected) => void;
 }
 
-export interface IEducation {
+export interface IExperience {
   id: string;
-  degree: string;
-  institute: string;
-  study: string;
+  job: string;
+  company: string;
+  companyLocation: string;
   startDate: string;
   endDate: string;
-  gpa: string;
-  achievements: string;
+  jobDesc: string;
 }
 
-export type EducationKey = keyof IEducation;
+export type ExperienceKey = keyof IExperience;
 
-export default function Education({
+export default function Experience({
   inputStyle,
-  educations,
-  updateEducations,
-  addEducation,
-  removeEducation,
+  experiences,
+  updateExperiences,
+  addExperience,
+  removeExperience,
   setSelected,
-}: EducationProps) {
+}: ExperienceProps) {
   return (
-    <section className="m-auto grid max-w-[600px] gap-4 rounded-md bg-white p-4 shadow-md md:p-6 dark:bg-neutral-900">
+    <section className="m-auto grid max-w-[800px] gap-4 rounded-md bg-white p-4 shadow-md md:p-6 dark:bg-neutral-900">
       <p className="text-2xl font-semibold text-gray-700 dark:text-gray-50">
         Professional Experience
       </p>
-      {educations.map((edu, index) => (
-        <EducationField
+      {experiences.map((exp, index) => (
+        <ExperienceField
           index={index}
-          key={edu.id}
-          updateEducations={updateEducations}
-          id={edu.id}
+          key={exp.id}
+          updateExperiences={updateExperiences}
+          id={exp.id}
           inputStyle={inputStyle}
-          education={edu}
-          removeEducation={removeEducation}
-        ></EducationField>
+          experience={exp}
+          removeExperience={removeExperience}
+        ></ExperienceField>
       ))}
-      {educations.length < 3 && (
+      {experiences.length < 3 && (
         <button
           className="my-2 flex cursor-pointer items-center gap-1 text-orange-600"
           type="button"
-          onClick={addEducation}
+          onClick={addExperience}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,7 @@ export default function Education({
           >
             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
           </svg>
-          <span className="text-sm">Add another education</span>
+          <span className="text-sm">Add another experience</span>
         </button>
       )}
       <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800">
@@ -73,7 +77,7 @@ export default function Education({
         value="Continue"
         type="submit"
         className="-mt-2 cursor-pointer rounded-md p-2 text-orange-600 outline-1 outline-orange-600 transition hover:bg-orange-600 hover:text-white active:bg-orange-700 active:text-white"
-        onClick={() => setSelected("Skills")}
+        onClick={() => setSelected("Education")}
       />
     </section>
   );
