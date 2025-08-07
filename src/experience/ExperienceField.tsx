@@ -105,7 +105,7 @@ export default function ExperienceField({
       </div>
       <button
         onClick={() => removeExperience(experience.id)}
-        className="inline-flex cursor-pointer items-center justify-center gap-1 rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 lg:col-span-2"
+        className="inline-flex w-full max-w-32 cursor-pointer items-center justify-center gap-1 justify-self-center rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 lg:col-span-2"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

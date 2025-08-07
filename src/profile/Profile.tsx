@@ -122,15 +122,17 @@ export default function Profile({
           <p className="text-end text-xs text-gray-400">{summary.length}/500</p>
         </div>
       </div>
-      <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800">
-        Preview CV
-      </button>
-      <input
-        value="Continue"
-        type="submit"
-        className="cursor-pointer rounded-md p-2 text-orange-600 outline-1 outline-orange-600 transition hover:bg-orange-600 hover:text-white active:bg-orange-700 active:text-white"
-        onClick={() => setSelected("Experience")}
-      />
+      <div className="grid gap-2 min-[380px]:grid-cols-2">
+        <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 min-[380px]:col-start-1">
+          Preview CV
+        </button>
+        <input
+          value="Continue"
+          type="submit"
+          className="cursor-pointer rounded-md p-2 text-orange-600 outline-1 outline-orange-600 transition hover:bg-orange-600 hover:text-white active:bg-orange-700 active:text-white min-[380px]:col-start-2"
+          onClick={() => setSelected("Experience")}
+        />
+      </div>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import type { SkillsKey } from "./Skills";
 
 const createSkills = () => {
   return {
-    id: "",
+    id: crypto.randomUUID(),
     category: "",
     name: "",
   };

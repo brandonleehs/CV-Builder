@@ -66,15 +66,17 @@ export default function Education({
           <span className="text-sm">Add another education</span>
         </button>
       )}
-      <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800">
-        Preview CV
-      </button>
-      <input
-        value="Continue"
-        type="submit"
-        className="-mt-2 cursor-pointer rounded-md p-2 text-orange-600 outline-1 outline-orange-600 transition hover:bg-orange-600 hover:text-white active:bg-orange-700 active:text-white"
-        onClick={() => setSelected("Skills")}
-      />
+      <div className="grid gap-2 min-[380px]:grid-cols-2">
+        <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 min-[380px]:col-start-1">
+          Preview CV
+        </button>
+        <input
+          value="Continue"
+          type="submit"
+          className="cursor-pointer rounded-md p-2 text-orange-600 outline-1 outline-orange-600 transition hover:bg-orange-600 hover:text-white active:bg-orange-700 active:text-white min-[380px]:col-start-2"
+          onClick={() => setSelected("Skills")}
+        />
+      </div>
     </section>
   );
 }
