@@ -5,10 +5,12 @@ export default function ProgressBar({ progress }: { progress: number }) {
         <p>Progress</p>
         <p className="font-bold">{progress}%</p>
       </div>
-      <div
-        className="h-2 w-full rounded-sm bg-orange-600 transition-[width]"
-        style={{ width: `${progress}%` }}
-      ></div>
+      <div className="rounded-sm bg-gray-200 dark:bg-gray-100">
+        <div
+          className="h-2 w-full rounded-sm bg-orange-600 transition-[width]"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
     </section>
   );
 }

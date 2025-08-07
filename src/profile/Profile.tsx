@@ -118,6 +118,7 @@ export default function Profile({
             rows={4}
             maxLength={500}
             onChange={(e) => setSummary(e.target.value)}
+            defaultValue={summary}
           ></textarea>
           <p className="text-end text-xs text-gray-400">{summary.length}/500</p>
         </div>
