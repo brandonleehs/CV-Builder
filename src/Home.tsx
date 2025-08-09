@@ -51,7 +51,7 @@ export default function Home() {
         <Resume {...FormProps}></Resume>
       </div>
       <footer className="bg-gray-50 py-4 text-center dark:bg-neutral-900">
-        <p>© 2025 CV-Builder. All rights reserved.</p>
+        <p>© 2025 CVMaker. All rights reserved.</p>
       </footer>
     </div>
   );
