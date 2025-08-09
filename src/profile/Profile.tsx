@@ -4,6 +4,7 @@ import { type Selected } from "../form/Form";
 interface ProfileProps {
   inputStyle: string;
   summary: string;
+  preview: string;
   setName: (value: string) => void;
   setTitle: (value: string) => void;
   setEmail: (value: string) => void;
@@ -11,11 +12,13 @@ interface ProfileProps {
   setLocation: (value: string) => void;
   setSummary: (value: string) => void;
   setSelected: (selected: Selected) => void;
+  setPreview: (preview: string) => void;
 }
 
 export default function Profile({
   inputStyle,
   summary,
+  preview,
   setName,
   setTitle,
   setEmail,
@@ -23,10 +26,11 @@ export default function Profile({
   setLocation,
   setSummary,
   setSelected,
+  setPreview,
 }: ProfileProps) {
   return (
     <section className="m-auto grid max-w-[600px] gap-2 rounded-md bg-white p-4 shadow-md md:p-6 lg:max-w-[1000px] lg:grid-cols-2 lg:*:not-first:col-start-2 dark:bg-neutral-900 [&_label]:text-sm">
-      <Photo />
+      <Photo preview={preview} setPreview={setPreview} />
       <div className="grid gap-2">
         <label
           className="after:ml-1 after:text-orange-500 after:content-['*']"

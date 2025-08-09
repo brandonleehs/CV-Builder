@@ -7,6 +7,7 @@ export default function useProfile() {
   const [tel, setTel] = useState("");
   const [location, setLocation] = useState("");
   const [summary, setSummary] = useState("");
+  const [preview, setPreview] = useState("");
 
   const getFields = () => [name, title, email, tel, summary];
 
@@ -24,6 +25,8 @@ export default function useProfile() {
     summary,
     setSummary,
     getFields,
+    preview,
+    setPreview,
   };
 }
 

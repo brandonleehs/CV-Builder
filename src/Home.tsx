@@ -4,6 +4,7 @@ import useProfile from "./profile/useProfile";
 import useExperience from "./experience/useExperience";
 import useEducation from "./education/useEducation";
 import useSkills from "./skills/useSkills";
+import Resume from "./resume/Resume";
 
 export default function Home() {
   const profile = useProfile();
@@ -25,6 +26,7 @@ export default function Home() {
       </section>
       <hr className="border-gray-100 dark:border-neutral-800" />
       <Form {...FormProps}></Form>
+      <Resume {...FormProps}></Resume>
     </div>
   );
 }
