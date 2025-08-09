@@ -39,3 +39,5 @@ export default function useExperience() {
     updateExperiences,
   };
 }
+
+export type UseExperienceReturn = ReturnType<typeof useExperience>;

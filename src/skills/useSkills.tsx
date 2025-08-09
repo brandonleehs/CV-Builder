@@ -32,3 +32,5 @@ export default function useSkills() {
     addSkills,
   };
 }
+
+export type UseSkillsReturn = ReturnType<typeof useSkills>;

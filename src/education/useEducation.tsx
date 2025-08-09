@@ -42,3 +42,5 @@ export default function useEducation() {
     removeEducation,
   };
 }
+
+export type UseEducationReturn = ReturnType<typeof useEducation>;

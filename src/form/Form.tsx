@@ -3,43 +3,50 @@ import ProgressBar from "./ProgressBar";
 import FormHeader from "./FormHeader";
 import FormWrapper from "./FormWrapper";
 import Profile from "../profile/Profile";
-import useExperience from "../experience/useExperience";
+import { type UseExperienceReturn } from "../experience/useExperience";
+import { type UseProfileReturn } from "../profile/useProfile";
+import { type UseSkillsReturn } from "../skills/useSkills";
+import Skills from "../skills/Skills";
 import Experience from "../experience/Experience";
 import Education from "../education/Education";
-import useEducation from "../education/useEducation";
-import useProfile from "../profile/useProfile";
-import useSkills from "../skills/useSkills";
-import Skills from "../skills/Skills";
+import type { UseEducationReturn } from "../education/useEducation";
 
 export type Selected = "Profile" | "Experience" | "Education" | "Skills";
+interface FormProps {
+  profile: UseProfileReturn;
+  experience: UseExperienceReturn;
+  education: UseEducationReturn;
+  skills: UseSkillsReturn;
+}
 
-export default function Form() {
+export default function Form({
+  profile,
+  experience,
+  education,
+  skills,
+}: FormProps) {
   const [selected, setSelected] = useState<Selected>("Profile");
   const inputStyle =
     "rounded-md border-0 bg-gray-100 px-3 py-2 focus:outline-2 dark:bg-neutral-800 focus:outline-gray-400";
 
-  const profile = useProfile();
   const profileProps = {
     ...profile,
     inputStyle,
     setSelected,
   };
 
-  const experience = useExperience();
   const experienceProps = {
     ...experience,
     inputStyle,
     setSelected,
   };
 
-  const education = useEducation();
   const educationProps = {
     ...education,
     inputStyle,
     setSelected,
   };
 
-  const skills = useSkills();
   const SkillsProps = {
     ...skills,
     inputStyle,

@@ -26,3 +26,5 @@ export default function useProfile() {
     getFields,
   };
 }
+
+export type UseProfileReturn = ReturnType<typeof useProfile>;

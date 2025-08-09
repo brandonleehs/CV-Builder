@@ -63,7 +63,7 @@ export default function Skill({
       )}
       <div className="grid gap-2 min-[380px]:grid-cols-2">
         <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 min-[380px]:col-start-1">
-          Preview CV
+          Download PDF
         </button>
         <input
           value="Back"
