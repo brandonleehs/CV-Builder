@@ -15,9 +15,11 @@ export default function ExperienceCard({
         </p>
       </div>
       <p className="text-base">{experience.job}</p>
-      <ul className="mt-2 list-inside list-disc">
+      <ul className="mt-2 ml-2 list-inside list-disc">
         {experience.jobDesc.split("\n").map((line, idx) => (
-          <li key={idx}>{line}</li>
+          <li className="mt-1" key={idx}>
+            {line}
+          </li>
         ))}
       </ul>
     </section>

@@ -12,7 +12,7 @@ interface SkillsProps {
 
 export interface ISkills {
   id: string;
-  category: string;
+  // category: string;
   name: string;
 }
 
@@ -42,7 +42,7 @@ export default function Skill({
           removeSkills={removeSkills}
         ></SkillsField>
       ))}
-      {skills.length < 3 && (
+      {skills.length < 7 && (
         <button
           className="my-2 flex cursor-pointer items-center gap-1 text-orange-600"
           type="button"

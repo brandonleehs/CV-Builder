@@ -22,7 +22,7 @@ export default function SkillsField({
       <p className="text-lg font-semibold text-gray-700 lg:col-span-2 dark:text-gray-50">
         Skills {index + 1}
       </p>
-      <div className="grid gap-2" id={id}>
+      {/* <div className="grid gap-2" id={id}>
         <label htmlFor={`category-${id}`}>Skills Category</label>
         <input
           required
@@ -33,7 +33,7 @@ export default function SkillsField({
           onChange={(e) => updateSkills(id, "category", e.target.value)}
           defaultValue={skill.category}
         />
-      </div>
+      </div> */}
       <div className="grid gap-2">
         <label htmlFor={`name-${id}`}>Skill Name</label>
         <input

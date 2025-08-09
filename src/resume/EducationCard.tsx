@@ -20,9 +20,11 @@ export default function EducationCard({
       <p>
         GPA: <span className="font-semibold">{education.gpa}</span>
       </p>
-      <ul className="mt-2 list-inside list-disc">
+      <ul className="mt-2 ml-2 list-inside list-disc">
         {education.achievements.split("\n").map((line, idx) => (
-          <li key={idx}>{line}</li>
+          <li className="mt-1" key={idx}>
+            {line}
+          </li>
         ))}
       </ul>
     </section>

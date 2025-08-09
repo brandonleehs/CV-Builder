@@ -7,6 +7,7 @@ import ExperienceCard from "./ExperienceCard";
 import EducationCard from "./EducationCard";
 import type { IExperience } from "../experience/Experience";
 import type { IEducation } from "../education/Education";
+import type { ISkills } from "../skills/Skills";
 
 interface ResumeProps {
   profile: UseProfileReturn;
@@ -44,16 +45,16 @@ export default function Resume({
         <p className="text-xl uppercase">
           {profile.title ? profile.title : defaultTitle}
         </p>
-        <div className="h-1 w-18 bg-sky-800"></div>
+        <div className="h-1 w-18 bg-sky-800 dark:bg-sky-600"></div>
       </div>
 
       <section className="grid max-w-[800px] gap-4">
         <section className="grid gap-2 text-base">
-          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase">
+          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase dark:text-sky-600">
             Contact
           </p>
           <hr className="w-full outline-1 outline-sky-900" />
-          <div className="ml-2 inline-flex items-center gap-2 pl-1">
+          <div className="ml-2 inline-flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -69,7 +70,7 @@ export default function Resume({
             </svg>
             <span>{profile.tel ? profile.tel : defaultTel}</span>
           </div>
-          <div className="ml-2 inline-flex items-center gap-2 pl-1">
+          <div className="ml-2 inline-flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -82,7 +83,7 @@ export default function Resume({
             </svg>
             <span>{profile.email ? profile.email : defaultEmail}</span>
           </div>
-          <div className="ml-2 inline-flex items-center gap-2 pl-1">
+          <div className="ml-2 inline-flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -97,17 +98,17 @@ export default function Resume({
           </div>
         </section>
         <section className="grid gap-2">
-          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase">
+          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase dark:text-sky-600">
             Profile
           </p>
           <hr className="w-full outline-1 outline-sky-900" />
-          <p className="pl-1">
+          <p className="ml-2">
             {profile.summary ? profile.summary : defaultSummary}
           </p>
         </section>
 
         <section className="grid gap-2">
-          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase">
+          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase dark:text-sky-600">
             Education
           </p>
           <hr className="w-full outline-1 outline-sky-900" />
@@ -134,7 +135,7 @@ Presented capstone project on market entry strategies for emerging economies.`,
           )}
         </section>
         <section className="grid gap-2">
-          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase">
+          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase dark:text-sky-600">
             Work Experience
           </p>
           <hr className="w-full outline-1 outline-sky-900" />
@@ -159,12 +160,39 @@ Monitor brand consistency across marketing channels and materials.`,
             />
           )}
         </section>
+        <section className="grid gap-2 text-base">
+          <p className="text-xl font-bold tracking-wide text-sky-900 uppercase dark:text-sky-600">
+            Skills
+          </p>
+          <hr className="w-full outline-1 outline-sky-900" />
+          <ul>
+            {skills.skills && skills.skills.some((skill) => isEdited(skill)) ? (
+              skills.skills.map((skill) => (
+                <li className="list-inside list-disc" key={skill.id}>
+                  {skill.name}
+                </li>
+              ))
+            ) : (
+              <>
+                <li className="list-inside list-disc" key="pm">
+                  Project Management
+                </li>
+                <li className="list-inside list-disc" key="pr">
+                  Public Relations
+                </li>
+                <li className="list-inside list-disc" key="teamwork">
+                  Teamwork
+                </li>
+              </>
+            )}
+          </ul>
+        </section>
       </section>
     </main>
   );
 }
 
-function isEdited(formObject: IExperience | IEducation): boolean {
+function isEdited(formObject: IExperience | IEducation | ISkills): boolean {
   const { id, ...keys } = formObject;
   return !Object.values(keys).every((el) => el.length === 0);
 }
