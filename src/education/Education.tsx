@@ -8,6 +8,7 @@ interface EducationProps {
   addEducation: () => void;
   removeEducation: (id: string) => void;
   setSelected: (selected: Selected) => void;
+  downloadResume: () => void;
 }
 
 export interface IEducation {
@@ -30,6 +31,7 @@ export default function Education({
   addEducation,
   removeEducation,
   setSelected,
+  downloadResume,
 }: EducationProps) {
   return (
     <section className="m-auto grid max-w-[800px] gap-4 rounded-md bg-white p-4 shadow-md md:p-6 dark:bg-neutral-900">
@@ -67,7 +69,10 @@ export default function Education({
         </button>
       )}
       <div className="grid gap-2 min-[380px]:grid-cols-2">
-        <button className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 min-[380px]:col-start-1">
+        <button
+          onClick={downloadResume}
+          className="cursor-pointer rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 min-[380px]:col-start-1"
+        >
           Download PDF
         </button>
         <input

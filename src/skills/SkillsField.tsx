@@ -19,7 +19,7 @@ export default function SkillsField({
 }: SkillsFieldProps) {
   return (
     <section className="grid gap-2">
-      <p className="text-lg font-semibold text-gray-700 lg:col-span-2 dark:text-gray-50">
+      <p className="text-lg font-semibold text-gray-700 dark:text-gray-50">
         Skills {index + 1}
       </p>
       {/* <div className="grid gap-2" id={id}>
@@ -48,7 +48,7 @@ export default function SkillsField({
       </div>
       <button
         onClick={() => removeSkills(skill.id)}
-        className="mt-2 inline-flex w-full max-w-32 cursor-pointer items-center justify-center gap-1 justify-self-center rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800 lg:col-span-2"
+        className="mt-2 inline-flex w-full max-w-32 cursor-pointer items-center justify-center gap-1 justify-self-center rounded-md bg-orange-600 p-2 text-white transition hover:bg-orange-700 active:bg-orange-800"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

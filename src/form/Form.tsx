@@ -17,6 +17,7 @@ interface FormProps {
   experience: UseExperienceReturn;
   education: UseEducationReturn;
   skills: UseSkillsReturn;
+  downloadResume: () => void;
 }
 
 export default function Form({
@@ -24,6 +25,7 @@ export default function Form({
   experience,
   education,
   skills,
+  downloadResume,
 }: FormProps) {
   const [selected, setSelected] = useState<Selected>("Profile");
   const inputStyle =
@@ -33,24 +35,28 @@ export default function Form({
     ...profile,
     inputStyle,
     setSelected,
+    downloadResume,
   };
 
   const experienceProps = {
     ...experience,
     inputStyle,
     setSelected,
+    downloadResume,
   };
 
   const educationProps = {
     ...education,
     inputStyle,
     setSelected,
+    downloadResume,
   };
 
   const SkillsProps = {
     ...skills,
     inputStyle,
     setSelected,
+    downloadResume,
   };
 
   const requiredFormFields = profile.getFields();
