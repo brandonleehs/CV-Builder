@@ -21,3 +21,7 @@ A built-in feature lets you download the resume section as a PDF.
 - **React** – Frontend framework
 - **Tailwind** – Styling
 - **html2canvas** & **jsPDF** – PDF generation
+
+## References
+
+Design taken from [Canva](https://www.canva.com/templates/EAFzfwx_Qik-blue-simple-professional-cv-resume/).
