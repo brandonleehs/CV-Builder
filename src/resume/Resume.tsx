@@ -28,7 +28,7 @@ export default function Resume({
   const defaultTel = "+123-456-7890";
   const defaultLocation = "123 Anywhere St., Any City";
   const defaultSummary =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation. Ut enim ad minim veniam quis nostrud exercitation.";
+    "Results-driven Marketing Manager with an MBA in Business Administration and expertise in strategic marketing, brand management, and market expansion. Skilled in leading cross-functional teams, executing data-driven campaigns, and aligning marketing strategies with business goals to drive growth and enhance brand presence.";
   const defaultPreview = photo;
 
   return (
@@ -102,7 +102,7 @@ export default function Resume({
             Profile
           </p>
           <hr className="w-full outline-1 outline-sky-900" />
-          <p className="ml-2">
+          <p className="ml-2 text-base">
             {profile.summary ? profile.summary : defaultSummary}
           </p>
         </section>
@@ -134,7 +134,7 @@ Presented capstone project on market entry strategies for emerging economies.`,
             />
           )}
         </section>
-        <section className="grid gap-2">
+        <section className="relative grid gap-4 before:absolute before:top-18 before:bottom-0 before:left-[0.425rem] before:w-0.5 before:bg-sky-900 before:content-['']">
           <p className="text-xl font-bold tracking-wide text-sky-900 uppercase dark:text-sky-600">
             Work Experience
           </p>
@@ -145,19 +145,44 @@ Presented capstone project on market entry strategies for emerging economies.`,
               <ExperienceCard key={exp.id} experience={exp} />
             ))
           ) : (
-            <ExperienceCard
-              experience={{
-                id: crypto.randomUUID(),
-                job: "Marketing Manager & Specialist",
-                company: "Borcello Studio",
-                companyLocation: "1234 Market St, San Francisco, CA",
-                jobDesc: `Develop and execute comprehensive marketing strategies and campaigns that align with the company's goals and objectives.
-Develop and execute comprehensive marketing strategies and campaigns that align with the company's goals and objectives.
+            <>
+              <ExperienceCard
+                experience={{
+                  id: crypto.randomUUID(),
+                  job: "Marketing Manager & Specialist",
+                  company: "Borcello Studio",
+                  companyLocation: "1234 Market St, San Francisco, CA",
+                  jobDesc: `Develop and execute comprehensive marketing strategies and campaigns that align with the company's goals and objectives.
 Monitor brand consistency across marketing channels and materials.`,
-                startDate: "2025-06-10",
-                endDate: "2025-10-10",
-              }}
-            />
+                  startDate: "2023-01-01",
+                  endDate: "2023-06-30",
+                }}
+              />
+              <ExperienceCard
+                experience={{
+                  id: crypto.randomUUID(),
+                  job: "Marketing Manager & Specialist",
+                  companyLocation: "1234 Market St, San Francisco, CA",
+                  company: "Fauget Studio",
+                  jobDesc: `Create and manage the marketing budget, ensuring efficient allocation of resources and optimizing ROI.
+Oversee market research to identify emerging trends, customer needs, and competitor strategies.
+Monitor brand consistency across marketing channels and materials.`,
+                  startDate: "2023-07-01",
+                  endDate: "2024-03-31",
+                }}
+              />
+              <ExperienceCard
+                experience={{
+                  id: crypto.randomUUID(),
+                  companyLocation: "1234 Market St, San Francisco, CA",
+                  job: "Marketing Manager & Specialist",
+                  company: "Studio Shodwe",
+                  jobDesc: `Develop and maintain strong relationships with partners, agencies, and vendors to support marketing initiatives.`,
+                  startDate: "2024-04-01",
+                  endDate: "2025-02-28",
+                }}
+              />
+            </>
           )}
         </section>
         <section className="grid gap-2 text-base">
@@ -182,6 +207,18 @@ Monitor brand consistency across marketing channels and materials.`,
                 </li>
                 <li className="list-inside list-disc" key="teamwork">
                   Teamwork
+                </li>
+                <li className="list-inside list-disc" key="teamwork">
+                  Time Management
+                </li>
+                <li className="list-inside list-disc" key="teamwork">
+                  Leadership
+                </li>
+                <li className="list-inside list-disc" key="teamwork">
+                  Effective Communication
+                </li>
+                <li className="list-inside list-disc" key="teamwork">
+                  Critical Thinking
                 </li>
               </>
             )}
